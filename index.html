@@ -1,0 +1,108 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  #chart-container {
+    width: 100%; /* Responsive width */
+    max-width: 800px; /* Maximum size of the chart */
+    margin: auto; /* Centering the chart */
+    height: 100%; /* Fixed height, but can be responsive as well */
+  }
+</style>
+	<title>EMBA Course Completion Status</title>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+	<script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+	<script type="text/javascript">
+		FusionCharts.ready(function(){
+			var chartObj = new FusionCharts({
+    type: 'multilevelpie',
+    renderAt: 'chart-container',
+
+     width: '100%',  // Using 100% width for responsiveness
+      height: '100%', 
+    dataFormat: 'json',
+    dataSource: {
+    "chart": {
+        "caption": "EMBA Course Completion Status",
+        "subcaption": "Combined Overview of Core and Elective Courses",
+        "showPlotBorder": "1",
+        "piefillalpha": "60",
+        "pieborderthickness": "2",
+        "hoverfillcolor": "#CCCCCC",
+        "piebordercolor": "#FFFFFF",
+        "numberprefix": "",
+        "plottooltext": "$label, $value courses, $percentValue",
+        "theme": "fusion",
+      "rotateLabels": "0",
+
+        "responsive": "enabled",  // Enabling responsiveness
+      "labelDisplay": "stagger",
+      "labelStep": "3"
+
+
+
+    },
+    "category": [{
+        "label": "Overall Status",
+        "color": "#f2f2f2",
+        "category": [{
+            "label": "Done - 38.1%",
+            "color": "#4caf50",  // Modern green color
+            "value": "38",
+            "category": [
+                {"label": "Core - Entrepreneurial<br> Mindset", "value": "1"},
+                {"label": "Core - Economics <br>for Managers", "value": "1"},
+                {"label": "Core - Decision <br>Analysis", "value": "1"},
+                {"label": "Core - SLE 1", "value": "1"},
+                {"label": "Core - Marketing <br>Management", "value": "1"},
+                {"label": "Core - Financial<br> Accounting & Finance", "value": "1"},
+                {"label": "Core - SLE 2", "value": "1"},
+                {"label": "Core - Operations <br>Management", "value": "1"}
+                // Additional courses can be added here
+            ]
+        }, {
+            "label": "Pending - 14.3%",
+            "color": "#ffeb3b",  // Modern yellow color
+            "value": "15",
+            "category": [
+                {"label": "Core - Managerial <br>Accounting", "value": "1"},
+                {"label": "Core - Strategy <br>& Growth", "value": "1"},
+                {"label": "Core - SLE 3", "value": "1"}
+                // Additional courses can be added here
+            ]
+        }, {
+            "label": "Not yet - 47.6%",
+            "color": "#f44336",  // Modern red color
+            "value": "30",
+            "category": [
+                            {"label": "Core - Communication<br> and Presentation Skills", "value": "1"},
+
+                {"label": "Core - International<br> Business Law", "value": "1"},
+                                {"label": "Core - Capstone", "value": "1"},
+
+                {"label": "Core - Sales <br>Management", "value": "1"},
+                {"label": "Core - Managing <br>& Leading Organizations", "value": "1"},
+                {"label": "Core - Entrepreneurial<br> Finance", "value": "1"},
+                {"label": "Core - Business,<br> Government and <br>the International Economy", "value": "1"},
+                {"label": "Elective #1", "value": "1"},
+                {"label": "Elective #2", "value": "1"},
+                {"label": "Elective #3", "value": "1"}
+                // Additional courses can be added here
+            ]
+        }]
+    }]
+}
+
+
+
+}
+);
+			chartObj.render();
+		});
+	</script>
+	</head>
+	<body>
+		<div id="chart-container">FusionCharts XT will load here!</div>
+	</body>
+</html>
